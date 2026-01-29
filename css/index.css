@@ -1,0 +1,298 @@
+/* ---------------- Global Reset ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Calibri, Arial, sans-serif;
+}
+
+body {
+    background: #6c4fbf;
+    padding: 20px;
+    
+}
+
+/* ---------------- Title Bar ---------------- */
+#titleBar {
+    width: 100%;
+    padding: 12px;
+    background: #b8c5ff;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 25px;
+    border: 3px double white;
+    margin-bottom: 25px;
+}
+
+/* ---------------- Main Form Area ---------------- */
+#form {
+    width: 900px;
+    padding: 25px;
+    background: #8b6fdd;
+    border: 5px double #ffffff;
+    border-radius: 25px;
+
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ---------------- Left Photo Frame ---------------- */
+.leftBox {
+    width: 30%;
+}
+
+.photoFrame {
+    width: 100%;
+    height: 340px;
+    background: #d7e3ff;
+    border-radius: 20px;
+    border: 4px double white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.photoFrame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photoCaption {
+    width: 100%;
+    margin-top: 10px;
+    background: #cdd9ff;
+    padding: 8px;
+    text-align: center;
+
+    border-radius: 15px;
+    border: 3px double white;
+}
+
+/* ---------------- Middle Form ---------------- */
+.middleBox {
+    width: 35%;
+}
+
+.middleBox input,
+.middleBox select {
+    width: 100%;
+    padding: 7px;
+    margin: 8px 0;
+    background: #e8eaff;
+    border: 2px solid #b8c5ff;
+    border-radius: 5px;
+}
+
+.middleBox label {
+    font-weight: bold;
+    color: white;
+}
+
+/* Captcha Button */
+#captchaBtn {
+    margin-top: 5px;
+    padding: 6px 12px;
+    background: #dcdcff;
+    border: 2px solid #dcdcff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ---------------- Right Image Upload ---------------- */
+.rightBox {
+    width: 30%;
+    text-align: center;
+}
+
+.uploadFrame {
+    width: 100%;
+    height: 300px;
+    background: #cdd9ff;
+    border-radius: 20px;
+    border: 4px double white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.uploadFrame img {
+    width: 90%;
+    height: auto;
+}
+
+input[type="file"] {
+    margin-top: 15px;
+    color: white;
+}
+
+.options {
+    margin-top: 15px;
+    color: white;
+}
+
+.options label {
+    margin-right: 15px;
+}
+
+.options input {
+    margin-right: 4px;
+}
+
+
+.rules {
+    margin-top: 10px;
+}
+
+.rules p {
+    font-size: 14px;
+    color: white;
+    margin: 3px 0;
+}
+
+#submit_btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    /* background: #dcd9ff; */
+    border-radius: 10px;
+    /* border: 3px double white; */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    /* color: #333; */
+}
+
+
+#img_prv {
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 200px;
+    width: 250px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#user_dtl {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+
+    height: 25px;
+    width: 880px;
+
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid navy;
+
+    text-align: center;
+}
+
+
+#greet_img {
+    position: absolute;
+    bottom: 140px;
+    left: 80px;
+
+    width: 400px;
+    border: 5px solid black;
+    border-radius: 8px;
+    object-fit: contain;
+
+    z-index: 10;
+}
+
+
+#time {
+    position: absolute;
+    top: 130px;
+    left: 80px;
+
+    width: 400px;
+    height: 50px;
+
+    background-color: white;
+    text-align: center;
+
+    border-radius: 12px;
+    border: 1px solid navy;
+}
+
+
+#greet_msg {
+    position: absolute;
+    bottom: 85px;
+    left: 80px;
+
+    width: 405px;
+    font-size: 30px;
+    text-align: center;
+
+    background-color: white;
+    padding: 5px 10px;
+
+    border-radius: 8px;
+    border: 1px solid navy;
+
+    /* z-index: 10; */
+}
+#captcha_main {
+    position: absolute;
+    bottom: 150px;
+    right: 160px;
+}
+
+#captcha {
+    width: 145px;
+    height: 30px;
+}
+
+i {
+    position: absolute;
+    top: 147px;
+    left: 250px;
+}
+
+#pass_error_msg {
+    position: absolute;
+    top: 147px;
+    left: 275px;
+}
+
+
+#image::-webkit-file-upload-button {
+    margin-right: -100px;
+}
+
+#image {
+    color: transparent;
+}
+
+
+span {
+    color: red;
+}
+#img_div
+{
+    position: absolute;
+    right: 60px;
+
+    /* left: 8px; */
+    top: 50px;
+    
+}

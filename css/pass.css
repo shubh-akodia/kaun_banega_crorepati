@@ -1,0 +1,140 @@
+/* Page center */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+    font-family: Arial, sans-serif;
+    background-image: url('/images/bg_img.jpg'); 
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+}
+
+/* Main container */
+.container {
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Heading */
+h1 {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Button */
+#homeBtn {
+    margin-top: 15px;
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    background: yellowgreen;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 450px;
+    right: 75px;
+    left: 190px;
+}
+
+#homeBtn:hover {
+    background: #0c5bd6;
+}
+
+/* ================= CHEQUE SECTION ================= */
+
+.check-wrapper {
+    position: relative;
+    width: 520px;       /* cheque image width */
+    margin: 25px auto;
+}
+
+/* Cheque image */
+.check-img {
+    width: 900px;
+    height: 400px;
+    position: absolute;
+    right: 65px;
+    left: -90px;
+   
+}
+
+/* Player Name on cheque */
+.check-name {
+    position: absolute;
+    top: 145px;     /* adjust if needed */
+    left: 135px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    white-space: nowrap;
+}
+
+/* Amount on cheque */
+.check-amount {
+    position: absolute;
+    top: 185px;
+    left: 135px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Date on cheque */
+.check-date {
+    position: absolute;
+    top: 95px;
+    right: 60px;
+    font-size: 14px;
+    color: #000;
+}
+
+/* Responsive (Mobile Support) */
+@media (max-width: 600px) {
+    .check-wrapper {
+        width: 95%;
+    }
+
+    .check-name {
+        top: 48%;
+        left: 22%;
+        font-size: 15px;
+    }
+
+    .check-amount {
+        top: 36%;
+        left: 22%;
+        font-size: 17px;
+    }
+
+    .check-date {
+        top: 18%;
+        right: 10%;
+        font-size: 12px;
+    }
+}
+.check-name
+{
+    position: absolute;
+    top: 280px;
+    left: 170px;
+    transform: rotate(-7deg);
+}
+.check-date
+{
+    
+   position: absolute;
+    top: 180px;
+    left: 570px;
+    width: 150px; 
+    transform: rotate(-7deg); 
+}
+.check-amount
+{
+    position: absolute;
+    top: 275px;
+    left: 600px;
+    transform: rotate(-7deg); 
+}

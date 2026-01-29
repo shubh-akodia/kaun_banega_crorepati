@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Over</title>
+    <link rel="stylesheet" href="/css/gameover.css">
+
+    <script>
+        function restartGame() {
+            window.location.href = "index.html";
+        }
+
+        function pass() {
+            window.location.href = "index.html";
+        }
+
+        window.onload = function () {
+
+            let name = localStorage.getItem("playerName");
+            let amount = localStorage.getItem("winAmount");
+
+            let today = new Date();
+            let formattedDate = today.toLocaleDateString("en-IN", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric"
+            });
+
+            document.getElementById("playerName").innerText = name || "Player";
+            document.getElementById("winAmount").innerText = amount || "0";
+            document.getElementById("todayDate").innerText = formattedDate;
+        };
+    </script>
+</head>
+
+<body>
+    <div class="gameover-container">
+        
+
+        <!-- CHEQUE -->
+        <div class="check-wrapper">
+            <img src="/images/CHECK1.jpg" class="check-img"> 
+
+            <span class="check-name" id="playerName"></span>
+            <span class="check-amount" id="winAmount"></span>
+            <span class="check-date" id="todayDate"></span>
+        </div>
+
+        <!-- BUTTONS -->
+        <button onclick="pass()" id="home">Go to Home</button>
+        <button onclick="restartGame()" id="try">Try Again</button>
+    </div>
+</body>
+</html>

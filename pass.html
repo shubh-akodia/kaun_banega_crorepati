@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations!</title>
+    <link rel="stylesheet" href="pass.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="/css/pass.css">
+   <script>
+   
+        window.onload = function () {
+
+    // Play music
+    document.getElementById("seven_crore").play();
+
+    // Get data from localStorage
+    let name = localStorage.getItem("playerName");
+    let amount = localStorage.getItem("winAmount");
+
+    // Get today's date
+    let today = new Date();
+    let formattedDate = today.toLocaleDateString("en-IN", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    });
+
+    // Set values in HTML
+    document.getElementById("playerName").innerText = name || "Winner";
+    document.getElementById("winAmount").innerText = amount || "₹0";
+    document.getElementById("todayDate").innerText = formattedDate;
+};
+
+function pass() {
+    window.location.href = "index.html";
+}
+
+
+</script>
+
+</head>
+<body>
+    <div class="container">
+        <!-- <img src="/images/kbc_logo.png" alt="KBC Logo" class="logo"> -->
+        <h1>🎉 Congratulations! 🎉</h1>
+        <!-- <img src="/images/CHECK1.jpg" class="check-img"><br> -->
+        <audio src="/MUSIC/7_crore.mp3" id="seven_crore" onload="play()"></audio>
+
+    </div>
+<div class="check-details">
+   <div class="check-wrapper">
+    <img src="/images/CHECK1.jpg" class="check-img">
+
+    <span class="check-name" id="playerName"></span>
+    <span class="check-amount" id="winAmount"></span>
+    <span class="check-date" id="todayDate"></span>
+    <button id="homeBtn" onclick="pass()">Go to Home</button>
+
+</div>
+
+</div>
+
+    
+</body>
+</html>

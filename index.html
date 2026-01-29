@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBC</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="/js/index.js"></script>
+</head>
+<body>
+   
+
+    <!-- timer in greet side -->
+    <div  id="timer">
+        <h1 id="time"></h1>
+        <img  id="greet_img">
+        <h2 id="greet_msg"></h2>
+    </div>
+    <!-- timer end greet side -->
+
+    <!-- countdown -->
+    <h3 id="countdown"></h3>
+    <!-- countdown -->
+
+    <!-- validation form start -->
+     <div id="user_dtl"><b>USER DETAILS</b></div>
+    <div id="form">
+        <form action="rules.html" onsubmit="return validation()" onload="validation()">
+            Name<span>*</span>:- <input type="text" id="uname" onkeyup="name_error()" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g,'')">
+            <span id="uname_error_msg" ></span>
+            <br><br>
+            Father Name<span>*</span>:- <input type="text" id="fname" onkeyup="name_father()" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g,'')">
+            <span id="fname_error_msg"></span>
+            <br><br>
+            Email<span>*</span>:- <input type="email" id="email" onkeyup="name_email()">
+            <span id="email_error_msg"></span>
+            <br><br>
+            Password<span>*</span>:- <input type="text" id="pass" onkeyup="password_name() ; passcheck(this.value)">
+            <div class="container">
+                <i class="fa fa-eye-slash" id="slash_eye" onclick="show_pass()"></i>
+                <i class="fa fa-eye" id="normal_eye" onclick="hide_pass()" style="display: none;"></i>
+                <span id="show"></span>
+                <span id="pass_error_msg"></span>
+            </div>
+            
+            <div class="pass_check"><b></b>
+                <p id="eight_char">8 Characters</p>
+                <p id="upper_case">1 Upper Case Characters</p>
+                <p id="lower_case">1 Lower Case Characters</p>
+                <p id="num_case">1 Numerical Case Characters</p>
+                <p id="spl_case">1 Special Case Characters</p>
+            </div>
+            <br><br>
+            DOB<span>*</span>:- <input type="date" id="dob" onchange="date()">
+            <span id="dob_error_msg"></span>
+            <br><br>
+            Mob. Number<span>*</span>:- <input type="text" id="num" onkeyup="number()" maxlength="10" oninput="this.value = this.value.replace(/[^0-9\s]/g,'')">
+            <span id="num_error_msg"></span>
+            <br><br>
+            <div id="img_div">
+                <div id="img_prv"> image preview</div>
+            <!-- image:- -->
+            <input type="file" id="image" onchange="previewImage()"><br>
+            <span id="image_error_msg"></span>
+            <br><br>
+            </div>
+            Gender<span>*</span>:- <input type="radio" name="gender" onchange="Gender_select()">Male
+            <input type="radio" name="gender" onchange="Gender_select()">Female
+            <span id="gender_error_msg"></span><br><br>
+            Hobby<span>*</span>:- <input type="checkbox" name="hobby" onchange="hobby_select()">Cricket
+            <input type="checkbox" name="hobby" onchange="hobby_select()">Football
+            <input type="checkbox" name="hobby" onchange="hobby_select()">Reading
+            <input type="checkbox" name="hobby" onchange="hobby_select()">Singing<br>
+            <span id="hobby_error_msg"></span><br><br>
+            Add<span>*</span>:- <textarea id="add" onkeyup="address()"></textarea>
+            <span id="add_error_msg"></span>
+            <br><br>
+            City<span>*</span>:-<select id="city" onchange="city_on()">
+                <option value="">Select City</option>
+                <option value="indore">Indore</option>
+                <option value="pune">Pune</option>
+                <option value="bhopal">Bhopal</option>
+            </select>
+            <span id="city_error_msg"></span>
+            <br><br>
+            <button type="submit" id="submit_btn" onclick="submitForm()" disabled>SUBMIT<br></button>
+        </form>
+        <!-- validation form end -->
+
+        <!-- captcha start -->
+        <div id="captcha_main">
+            <canvas id="captcha"  width="200" height="120"></canvas><br><br>
+            <input type="text" oninput="checkCaptcha()" id="captcha_input" placeholder="Enter Captcha here"><br><br>
+            <button onclick="refreshCaptcha()">Refresh ⟳</button>
+            <!-- <button id="checkButton" onclick="checkCaptcha()">Check</button> -->
+            <p id="captcha_error"></p>
+            <p id="result"></p>
+        </div>
+         <!-- captcha end -->
+    </div>
+</body>
+
+</html>

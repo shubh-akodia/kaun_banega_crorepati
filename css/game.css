@@ -1,0 +1,506 @@
+#rupees_box
+{
+    float: right;
+    
+}
+#logo
+{
+    position: absolute;
+    right: 620px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Calibri', Arial, sans-serif;
+}
+
+body{
+    background: radial-gradient(circle at center, #081b45, #00081f);
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ---------------- KBC LOGO ---------------- */
+/* #logo{
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 290px;
+    filter: drop-shadow(0 0 15px rgb(0, 255, 255));
+    animation: logo 10s linear infinite;
+}
+@keyframes logo {
+    from { transform: translateX(-50%) rotate(360deg); }
+    to { transform: translateX(-50%) rotate(0deg); }
+} */
+
+/* ---------------- MONEY LADDER ---------------- */
+#rupees_box{
+    position: absolute;
+    right: 20px;
+    top: 105px;
+    width: 170px;
+    height: 50px;
+}
+
+.rupees_class{
+    width: 100%;
+    padding: 6px 10px;
+    margin: 2px 0;
+    background: #041430;
+    border: 2px solid #fedc32;
+    color: #fedc32;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    cursor: default;
+}
+
+/* ---------------- LIFELINES ---------------- */
+#lifelines{
+    position: absolute;
+    left: 20px;
+    top: 70px;
+}
+
+#lifelines button{
+    width: 90px;
+    padding: 8px;
+    margin: 5px 0;
+    border: 2px solid #2cc4ff;
+    background: #00183d;
+    color: #2cc4ff;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#lifelines button:hover{
+    background: #013a7a;
+    scale: 1.05;
+}
+
+/* ---------------- START BUTTON ---------------- */
+#start{
+    position: absolute;
+    bottom: 660px;
+    left: 93%;
+    transform: translateX(-50%);
+    padding: 10px 60px;
+    border: 2px solid #ffdd2d;
+    background:greenyellow;
+    color:black;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#start:hover{
+    background: #0056bf;
+    box-shadow: 0 0 12px #ffdd2d;
+}
+
+
+
+/* ---------------- QUESTION BOX ---------------- */
+#questionBox{
+    position: absolute;
+    bottom: 190px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 72%;
+    background: rgba(0, 0, 0, 0.4);
+    border: 3px solid #2cc4ff;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 22px;
+    color: #ffffff;
+    box-shadow: 0 0 20px #2cc4ff;
+}
+
+/* ---------------- OPTIONS ---------------- */
+#options{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    gap: 15px;
+    width: 60%;
+}
+
+.opt{
+    background: linear-gradient(to right, #002f73, #00183d);
+    border: 3px solid #fedc32;
+    padding: 12px;
+    border-radius: 30px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.opt:hover{
+    background: #004aa1;
+    box-shadow: 0 0 10px #fedc32;
+}
+
+/* Correct & Wrong styles (optional) */
+.correct{
+    background: green !important;
+    border-color: lime !important;
+}
+
+.wrong{
+    background: red !important;
+    border-color: yellow !important;
+}
+
+/* ---------------- QUIT BUTTON ---------------- */
+#quit{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 32px;
+    border: 2px solid #ff001e;
+    background: #400000;
+    color: #ff6e6e;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#quit:hover{
+    background: #700000;
+}
+/* ---------------- ROUND CLOCK ---------------- */
+#clock{
+    position: absolute;
+    top: 330px;
+    left: 15%;
+    /* transform: translateX(-40%); */
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 8px solid #ffe45c;
+    box-shadow: 0 0 25px rgba(255, 228, 92, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: red;
+    background-color: whitesmoke;
+    /* animation: rotateClock 4s linear infinite; */
+}
+
+/* Timer number glow */
+#clock span{
+    text-shadow: 0 0 12px #ffe45c, 0 0 20px #ffe45c;
+}
+/* ---------------- OPTION LAYOUT ---------------- */
+#options{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Each row (A+B , C+D) */
+#options .row{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Option box */
+/* .opt{
+    background: linear-gradient(to right, #1b1f40, #0d0f26);
+    border: 3px solid #7ac6ff;
+    width: 40%;
+    padding: 12px 20px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0,150,255,0.4);
+}
+
+/* Hover effect */
+/* .opt:hover{
+    background: #004aa1;
+    box-shadow: 0 0 15px #7ac6ff;
+} */
+
+/* A:, B:, C:, D: Label */
+/* .opt .label{
+    font-weight: bold;
+    color: #ffc14d;
+    font-size: 22px;
+    text-shadow: 0 0 8px #ffc14d;
+} */
+
+/* The answer text */
+/* .opt .txt{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+} */ */
+
+/* Correct & Wrong (same as KBC glow) */
+/* .correct{
+    background: #004d00 !important;
+    border-color: lime !important;
+    box-shadow: 0 0 20px lime;
+} */
+
+/* .wrong{
+    background: #4d0000 !important;
+    border-color: red !important;
+    box-shadow: 0 0 16px red;
+} */
+#lifelines {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Image Buttons */
+.life_img_btn {
+    width: 140px;
+    height: 60px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Make Image fit PERFECTLY inside button */
+.life_img_btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* PERFECT FIT */
+    pointer-events: none; /* ensures button gets click, not image */
+}
+
+/* Optional Glow on Hover */
+.life_img_btn:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+#image
+{
+    position: absolute;
+    top: 190px;
+    left: 540px;
+    width: 500px;
+}
+hr {
+    height: 2px;
+    border: none;
+    background: linear-gradient(to right, #001a4d, #4dabff, #001a4d);
+    box-shadow: 0 0 10px #4dabff;
+    margin: 8px 0;
+}
+/* --------------------lock button---------------------- */
+#lock
+{
+    height: 110px;
+    width: 110px;
+    position: absolute;
+    left: 1200px;
+    bottom: 290px;
+    border-radius: 300px;
+    box-shadow:red;
+    border: 1px solid red;
+    box-shadow: 0 0 35px rgba(255, 0, 0, 1);
+}
+/* ---------------- TIMER ---------------- */
+#timer{
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffe45c;
+    text-shadow: 0 0 10px #ffe45c;
+}
+#img_lock
+{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+}
+
+
+.opt {
+    background: linear-gradient(to right, #1b1f40, #0d0f26);
+    border: 3px solid #7ac6ff;
+    width: 40%;
+    padding: 12px 20px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0,150,255,0.4);
+}
+
+.opt:hover {
+    background: #004aa1;
+    box-shadow: 0 0 15px #7ac6ff;
+}
+
+/* Correct & Wrong Styles */
+.correct {
+    background: #004d00 !important;
+    border-color: lime !important;
+    box-shadow: 0 0 20px lime;
+}
+
+.wrong {
+    background: #4d0000 !important;
+    border-color: red !important;
+    box-shadow: 0 0 16px red;
+}
+
+/* Locked options (disable hover & click) */
+.opt.locked {
+    pointer-events: none;
+    transition: none !important;
+}
+
+.opt.locked:hover {
+    background-color: inherit !important;
+}
+
+.life_img_btn {
+    position: relative;
+}
+
+.life_img_btn.used::after {
+    content: "✖"; /* cross mark */
+    position: absolute;
+    top: 10;
+    right: 10;
+    color: red;
+    font-size: 50px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Calibri', Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/bg_img.jpg');
+    background-size: cover;      
+    background-position: center;  
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    color: white;
+}
+/* Start animation */
+.logo-big-spin {
+    animation: bigSpinMove 10s ease-in-out forwards;
+}
+
+/* Final Position (original) */
+#logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+}
+
+
+/* Animation keyframes */
+@keyframes bigSpinMove {
+
+    /* Start small & hidden in center */
+    0% {
+        transform: translate(-40%, -70%) scale(0.3) rotate(0deg);
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+    }
+
+    /* Middle: Full screen cover */
+    70% {
+        transform: translate(-40%, -70%) scale(3) rotate(360deg);
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+    }
+
+    /* Glow + spin more */
+    50% {
+        transform: translate(-40%, -70%) scale(3.2) rotate(720deg);
+        filter: drop-shadow(0 0 30px yellow);
+        top: 50%;
+        left: 50%;
+    }
+
+    /* End: Back to original top center */
+    100% {
+        transform: translate(-50%, 0) scale(1) rotate(1080deg);
+        top: 20px;
+        left: 50%;
+        opacity: 1;
+        filter: none;
+    }
+}
+/* Continuous rotation in final position */
+#logo.spinForever {
+    animation: spinForever 10s linear infinite;
+}
+
+/* just rotate forever */
+@keyframes spinForever {
+    from { transform: translateX(-50%) rotate(360deg); }
+    to { transform: translateX(-50%) rotate(0deg); }
+}
+#start_game
+{
+    height: 50px;
+    width: 130px;
+    position: absolute;
+    bottom: 115px;
+}
+
+
+
+
+
+
+

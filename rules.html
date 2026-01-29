@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rules</title>
+    <link rel="stylesheet" href="/css/rules.css">
+    <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const checkbox = document.getElementById("checkbox");
+    const submit = document.getElementById("submit_btn");
+
+    checkbox.addEventListener("change", function () {
+        submit.disabled = !checkbox.checked;
+    });
+
+    submit.addEventListener("click", function () {
+        if (checkbox.checked) {
+            // Correct file path check karo
+            window.location.href = "game.html"; 
+        } else {
+            alert("Please accept terms before continuing.");
+        }
+    });
+});
+
+
+
+    </script>
+</head>
+<body>
+    <!-- <button onclick="window.location.href='game.html'">Go to Game</button> -->
+
+    <img src="/images/kbc_logo.png" id="logo">
+    <img src="/images/amitabh_bacchan.png" id="image">
+    <h2>KBC Quiz - Terms & Conditions</h2>
+<h3>Answer all questions correctly to progress through the money ladder and win the highest prize.</h3>
+
+<h3>Eligibility</h3>
+<div>
+    Players must be 13 years or older to participate.<br>
+    A stable internet connection is recommended for smooth gameplay.
+</div>
+
+<h3>Fair Play</h3>
+<div>
+Each question must be answered without cheating or external help.<br>
+Use of scripts, hacks, or multiple accounts is strictly prohibited.<br>
+Any unfair activity may result in disqualification or account ban.<br>
+</div>
+<h3>Lifelines & Game Rules</h3>
+<div>
+Lifelines can be used only once per game unless stated otherwise.<br>
+Once an answer is locked, it cannot be changed.<br>
+Failing to answer within the timer limit results in an incorrect attempt.<br>
+</div>
+
+<h3>Rewards & Winnings</h3>
+<div>
+All winnings shown in the game are virtual and hold no real cash value.<br>
+Once the answer is locked, it cannot be changed.<br>
+Safe levels, rewards, and game formats may change with updates.<br>
+The game does not guarantee any real monetary prize.<br>
+</div>
+
+<h3>User Data & Privacy</h3>
+<div>
+The game may collect gameplay data for improving app performance.<br>
+Personal information is handled according to the Privacy Policy.<br>
+Data may be used for analytics, leaderboard management, and security.<br>
+</div>
+
+<h3>Liability</h3>
+<div>
+The game is provided “as is.”<br>
+Developers are not responsible for app crashes, loss of progress, network issues and device damage.<br>
+Data may be used for analytics, leaderboard management, and security.<br>
+</div>
+<h4>Note: Make sure you have a stable internet connection before starting the game.</h4><br>
+
+<input type="checkbox" id="checkbox">I acknowledge that you have read and agree to these Terms & Conditions and will follow the KBC Quiz Rules.<br><br>
+
+<button type="button" value="submit" id="submit_btn" disabled>SUBMIT</button>
+</body>
+</html>

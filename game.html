@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kbc</title>
+    <link rel="stylesheet" href="/css/game.css">
+    <script src="/js/game.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <div id="rupees_box">
+        <div id="lvl_4">
+            <button class="rupees_class" disabled>₹ 7 Crore </button><br>
+        </div>
+            <hr>
+        <div id="lvl_3">
+            <button class="rupees_class" disabled>₹ 1 Crore</button><br>
+            <button class="rupees_class" disabled>₹ 50,00000</button><br>
+            <button class="rupees_class" disabled>₹ 25,00000</button><br>
+        </div>    
+            <hr>
+        <div id="lvl_2">    
+            <button class="rupees_class" disabled>₹ 12,50,000</button><br>
+            <button class="rupees_class" disabled>₹ 6,40,000</button><br>
+            <button class="rupees_class" disabled>₹ 3,20,000</button><br>
+            <button class="rupees_class" disabled>₹ 1,60,000</button><br>
+            <button class="rupees_class" disabled>₹ 8,00000</button><br>
+        </div>    
+            <hr>
+        <div id="lvl_1">    
+            <button class="rupees_class" disabled>₹ 2,00000</button><br>
+            <button class="rupees_class" disabled>₹ 1,00000</button><br>
+            <button class="rupees_class" disabled>₹ 50,000</button><br>
+            <button class="rupees_class" disabled>₹ 40,000</button><br>
+            <button class="rupees_class" disabled>₹ 30,000</button><br>
+            <button class="rupees_class" disabled>₹ 20,000</button><br>
+            <button class="rupees_class" disabled>₹ 10,000</button>
+        </div>
+    </div>
+        <img src="/images/kbc_logo.png" id="logo" class="logo-big-spin">
+        <img src="/images/amitabh.png" id="image">
+                <button id="quit" onclick="quit()">quit</button>
+       
+        <div id="lifelines">
+    <button class="life_img_btn" id="fifty_fifty">
+        <img src="/images/50-50.png">
+    </button>
+
+    <button class="life_img_btn" id="audience_poll">
+        <img src="/images/poll.png">
+    </button>
+
+    <button class="life_img_btn" id="swap">
+        <img src="/images/swap.png">
+    </button>
+
+    <button class="life_img_btn" id="call">
+        <img src="/images/call.png">
+    </button>
+</div>
+
+        <button id="start">start</button>
+        <div id="clock">
+             <span id="time">60</span>
+        </div>
+        <button id="lock" >
+            <img src="/images/lock.png" id="img_lock">
+        </button>
+
+         <div id="questionBox">
+        <p id="question">Loading question...</p>
+      </div>
+
+      <div id="options">
+    <div class="row">
+        <div class="opt">
+            <span class="label">A:</span>
+            <span class="txt" id="opt0">Option A</span>
+        </div>
+        <div class="opt">
+            <span class="label">B:</span>
+            <span class="txt" id="opt1">Option B</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="opt">
+            <span class="label">C:</span>
+            <span class="txt" id="opt2">Option C</span>
+        </div>
+        <div class="opt">
+            <span class="label">D:</span>
+            <span class="txt" id="opt3">Option D</span>
+        </div>
+    </div>
+</div>
+<audio id="start_audio" src="/MUSIC/short_title_track_audio.mpeg" preload="auto"></audio>
+
+<div id="clickToStart" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+   <img src="/images/kbc_logo.png" >
+   <button id="start_game" style="color: red; background-color: yellow; font-size: 20PX; border-radius: 10PX;" >START GAME</button>
+   
+</div>
+<audio src="/MUSIC/timer_45_second_audio.mpeg" id="tick_sound">
+<audio id="wrong_sound" src="/MUSIC/wrong_answer.mp3" ></audio>
+<audio src="/MUSIC/right_answer.mp3" id="correct_sound"></audio>
+
+
+
+
+
+</body>
+</html>

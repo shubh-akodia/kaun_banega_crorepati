@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="/js/index.js"></script>
 </head>
-<body>
+<body onload="init()">
    
 
     <!-- timer in greet side -->
     <div  id="timer">
         <h1 id="time"></h1>
-        <img  id="greet_img">
+        <img  id="greet_img" alt="Greeting Image">
         <h2 id="greet_msg"></h2>
     </div>
     <!-- timer end greet side -->
@@ -61,9 +61,14 @@
             <br><br>
             <div id="img_div">
                 <div id="img_prv"> image preview</div>
-            <!-- image:- -->
             <input type="file" id="image" onchange="previewImage()"><br>
             <span id="image_error_msg"></span>
+            <!-- <div id="img_div">
+  <div id="img_prv">Image Preview</div>
+  <input type="file" id="image"  onchange="previewImage()"><br>
+  <span id="image_error_msg"></span>
+</div> -->
+
             <br><br>
             </div>
             Gender<span>*</span>:- <input type="radio" name="gender" onchange="Gender_select()">Male

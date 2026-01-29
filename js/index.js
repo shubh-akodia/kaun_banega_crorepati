@@ -13,16 +13,32 @@ function init() {
 function timer() {
   setInterval(() => {
     let t = new Date();
-    document.getElementById("time").innerText = t.toLocaleTimeString();
     let h = t.getHours();
+
+    document.getElementById("time").innerText = t.toLocaleTimeString();
+
     let msg = document.getElementById("greet_msg");
-    msg.innerText =
-      h < 12 ? "Good Morning" :
-      h < 16 ? "Good Afternoon" :
-      h < 19 ? "Good Evening" :
-      "Good Night";
+    let img = document.getElementById("greet_img");
+
+    if (h < 12) {
+      msg.innerText = "Good Morning";
+      img.src = "images/gm.png";
+    } 
+    else if (h < 16) {
+      msg.innerText = "Good Afternoon";
+      img.src = "images/ga.png";
+    } 
+    else if (h < 19) {
+      msg.innerText = "Good Evening";
+      img.src = "images/ge.png";
+    } 
+    else {
+      msg.innerText = "Good Night";
+      img.src = "images/gn.png";
+    }
   }, 1000);
 }
+
 
 //  Captcha Generator
 function generateCaptcha() {
@@ -115,3 +131,36 @@ function submitForm() {
   alert("Form Submitted Successfully ✅");
   return false;
 }
+function previewImage() {
+  const fileInput = document.getElementById("image");
+  const previewDiv = document.getElementById("img_prv");
+
+  previewDiv.innerHTML = ""; // clear text
+
+  if (fileInput.files && fileInput.files[0]) {
+    const file = fileInput.files[0];
+
+    // image validation (optional)
+    if (!file.type.startsWith("image/")) {
+      previewDiv.innerText = "Please select an image file ❌";
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      const img = document.createElement("img");
+      img.src = e.target.result;
+      img.style.width = "150px";
+      img.style.height = "150px";
+      img.style.objectFit = "cover";
+      img.style.border = "2px solid #333";
+      img.style.borderRadius = "8px";
+
+      previewDiv.appendChild(img);
+    };
+
+    reader.readAsDataURL(file);
+  }
+}
+

@@ -3,6 +3,8 @@ let captcha_check = false;
 let password_check = false;
 let number_check = false;
 let email_check = false;
+let gender_check = false;
+let hobby_check = false;
 
 function init() {
   timer();
@@ -93,15 +95,42 @@ function passcheck(v) {
 
 //  Email
 function name_email() {
-  let e = email.value;
+  // let e = email.value;
+  let e = document.getElementById("email").value;
   email_check = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
   enableSubmitCheck();
 }
 //  Number
 function number() {
-  number_check = /^\d{10}$/.test(num.value);
+  let n = document.getElementById("num").value;
+  number_check = /^\d{10}$/.test(n);
+  // number_check = /^\d{10}$/.test(num.value);
   enableSubmitCheck();
 }
+function Gender_select(){
+let g=document.getElementsByName("gender");
+gender_check=false;
+
+for(let i=0;i<g.length;i++){
+if(g[i].checked){
+gender_check=true;
+}
+}
+enableSubmitCheck();
+}
+
+function hobby_select(){
+let h=document.getElementsByName("hobby");
+hobby_check=false;
+
+for(let i=0;i<h.length;i++){
+if(h[i].checked){
+hobby_check=true;
+}
+}
+enableSubmitCheck();
+}
+
 
 //  Basic Required Field Checks
 function name_error() { enableSubmitCheck(); }
@@ -112,35 +141,43 @@ function city_on() { enableSubmitCheck(); }
 
 //  Enable Submit
 function enableSubmitCheck() {
-  let ok =
-    uname.value &&
-    email_check &&
-    password_check &&
-    dob.value &&
-    number_check &&
-    image.files.length &&
-    add.value &&
-    city.value &&
-    captcha_check;
 
-  document.getElementById("submit_btn").disabled = !ok;
+let ok =
+document.getElementById("uname").value &&
+document.getElementById("fname").value &&
+email_check &&
+password_check &&
+document.getElementById("dob").value &&
+number_check &&
+document.getElementById("image").files.length > 0 &&
+document.getElementById("add").value &&
+document.getElementById("city").value &&
+captcha_check &&
+gender_check &&
+hobby_check;
+
+document.getElementById("submit_btn").disabled = !ok;
+
 }
-
-//  Submit
+// Submit
 function submitForm() {
   alert("Form Submitted Successfully ✅");
   return false;
 }
+
+
+// Image Preview
 function previewImage() {
+
   const fileInput = document.getElementById("image");
   const previewDiv = document.getElementById("img_prv");
 
-  previewDiv.innerHTML = ""; // clear text
+  previewDiv.innerHTML = "";
 
   if (fileInput.files && fileInput.files[0]) {
+
     const file = fileInput.files[0];
 
-    // image validation (optional)
     if (!file.type.startsWith("image/")) {
       previewDiv.innerText = "Please select an image file ❌";
       return;
@@ -149,7 +186,9 @@ function previewImage() {
     const reader = new FileReader();
 
     reader.onload = function (e) {
+
       const img = document.createElement("img");
+
       img.src = e.target.result;
       img.style.width = "150px";
       img.style.height = "150px";
@@ -161,6 +200,7 @@ function previewImage() {
     };
 
     reader.readAsDataURL(file);
+
+    enableSubmitCheck();
   }
 }
-
